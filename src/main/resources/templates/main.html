@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="background-color: papayawhip" class="table table-bordered table-condensed table-hover ">
+    <thead>
+    <tr>
+        <th>用户编号</th>
+        <th>用户姓名</th>
+        <th>用户密码</th>
+        <th>用户年龄</th>
+        <th>用户性别</th>
+        <th>用户头像</th>
+        <th>用户爱好</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.sex}"></td>
+        <td th:text="${user.headphoto}"></td>
+        <td th:text="${user.hobby}"></td>
+        <td>
+            <button type="submit" ><a href="update.html">修改用户信息</a></button>
+            <button type="submit" ><a href="delete">删除用户信息</a></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
